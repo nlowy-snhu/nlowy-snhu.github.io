@@ -141,7 +141,7 @@ As seen in earlier screenshots, there were placeholders for adding, updating, an
 </p>
 <br>
 
-There is also another significant change. When first launched, or when the database is removed when clearing the application storage, the application will build the SQLite database based on the input text file. This file has been modified for the Android application to include the data in this format: `Name,Category,Quantity`. An example portion of the input file and resulting main screen are below.
+There is also another significant change. When first launched, or when the database is removed when clearing the application storage, the application will build the SQLite database based on the input text file. This file has been modified for the Android application to include the data in this format: <code>Name,Category,Quantity</code>. An example portion of the input file and resulting main screen are below.
 
 ```
 Apples,Produce,4
@@ -156,7 +156,7 @@ Cauliflower,Produce,6
 </p>
 <br>
 
-Additional features include case insensitivity and trimmed inputs, so attempting to add ` yAMS     ` while `Yams` has already been entered will let you know that it is already in the database. This can help prevent issues with repeat items, especially in cases where users may accidentally attempt adding an existing item with differing capitalization or add a space after entering a product name due to keyboard suggestions.
+Additional features include case insensitivity and trimmed inputs, so attempting to add <code> yAMS     </code> while <code>`Yams`</code> has already been entered will let you know that it is already in the database. This can help prevent issues with repeat items, especially in cases where users may accidentally attempt adding an existing item with differing capitalization or add a space after entering a product name due to keyboard suggestions.
 
 Other, minor fixes have been added in this enhancement as well, including improved enabling/disabling of buttons when certain conditions are met, such as the increment button being disabled to begin with when the item chosen for updating began with the maximum quantity. 
 
