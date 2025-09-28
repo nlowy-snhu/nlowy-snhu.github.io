@@ -5,7 +5,7 @@ This is neither the final version of the project, nor of this README file. Updat
 
 ## The Original Project
 <details open>
-<summary>Click here to collapse/expand this section</summary>
+<summary><b>Click here to collapse/expand this section</b></summary>
 
 ### The Goal:
 The final project for CS 210 - Programming Languages, a course that taught basic file and class structures using languages such as C++. The premise of the final project is as follows:
@@ -58,7 +58,7 @@ To demonstrate competency in the course outcomes for CS 499 - Computer Science C
 
 ### Enhancement One - Software Design and Engineering
 <details>
-<summary>Click here to expand/collapse this section</summary>
+<summary><b>Click here to expand/collapse this section</b></summary>
 
 #### The Process
 To begin the enhancements, I first considered the requirements of the project, and then began to work on ways in which the enhancements could be demonstrated. Part of this process was creating a simple mockup so that I could lay out key ideas and gain a basic visual guideline.
@@ -129,7 +129,7 @@ The other challenge I faced is trying to avoid perfecting every detail too early
 Note, **Enhancement Three - Databases** was implemented prior to **Enhancment Two - Aglorithms & Data Structures**. This is due to easier implementation of algorithms/data structures thanks to stored and consistent inputs/outputs thanks to the SQLite database. However, there is also some overlap in these two enhancements, as algorithms and data structures do play a significant role in setting up, populating, and accessing a database.
 
 <details>
-<summary>Click here to expand/collapse this section</summary>
+<summary><b>Click here to expand/collapse this section</b></summary>
 
 #### The Process
 To begin, the main goal of implementing a database was to have repeat access to data with improved ability to search, sort, and modify. To that end, the first task was implementing a SQLite database. However, instead of using the default Android implementation of SQLite and related libraries, I instead used SQLCipher, so that a more secure database can be encrypted and require a passkey to decrypt it. This allows, should the Corner Grocer desire, an added level of security. While the application itself stores the database in a private folder in the system accessible only to the application, it now includes an added layer of protection. Another step of security is preventing SQL injection. This is accomplished in numerous ways, including the use of parameterized queries for user input, content values for helper methods, and limiting lengths and types of user input. 
