@@ -5,7 +5,7 @@ This is neither the final version of the project, nor of this README file. Updat
 
 ## The Original Project
 <details open>
-<summary><b>Click here to collapse/expand this section</b></summary>
+<summary>Click here to collapse/expand this section</summary>
 
 ### The Goal:
 The final project for CS 210 - Programming Languages, a course that taught basic file and class structures using languages such as C++. The premise of the final project is as follows:
@@ -58,7 +58,7 @@ To demonstrate competency in the course outcomes for CS 499 - Computer Science C
 
 ### Enhancement One - Software Design and Engineering
 <details>
-<summary><b>Click here to expand/collapse this section</b></summary>
+<summary>Click here to expand/collapse this section</summary>
 
 #### The Process
 To begin the enhancements, I first considered the requirements of the project, and then began to work on ways in which the enhancements could be demonstrated. Part of this process was creating a simple mockup so that I could lay out key ideas and gain a basic visual guideline.
@@ -72,7 +72,13 @@ Next, I created a new, basic application using Android Studio. Once it was set u
 </p>
 Once this was done, I simply created layouts using basic features so that I could easily access them when I was programming the main activity. As development continued, I slowly added more resource files and continued to develop the existent ones, adding new colors, layouts, icons, and more, including for day and night modes.
 
-<br> Afterwards, coding and testing alternated, with any new features that required development being added.
+<br> Afterwards, coding and testing alternated, with any new features that required development being added. Use of Javadoc comments also helped to ensure more useful and explanatary coding.
+<p align="center">
+    <img src="screenshots/Javadoc1.png" alt="The Javadoc commenting style">
+</p>
+<p align="center">
+    <img src="screenshots/Javadoc2.png" alt="The Javadoc readout when hovering">
+</p>
 
 #### The Features
 While this enhancement is not a finalized version of the application, it does demonstrate the focus on Software Design and Engineering. As such, certain features have been updated or introduced. These include:
@@ -110,6 +116,13 @@ While this enhancement is not a finalized version of the application, it does de
     <img src="screenshots/cropped/Delete.png" height="400px" alt="The bottom sheet demonstrating the capability of deleting a product.">
 </p>
 
+- **Optional histogram view through the overflow menu**
+<p align="center">
+    <img src="screenshots/cropped/Histogram.png" height="400px" alt="The histogram displaying asterisks instead of a numerical quantity.">
+</p>
+
+<br><br>
+
 #### The Narrative
 <details>
 <summary><b><i>Click here to expand and read the accompanying narrative for the software design and engineering enhancement</i></b></summary>
@@ -129,7 +142,7 @@ The other challenge I faced is trying to avoid perfecting every detail too early
 Note, **Enhancement Three - Databases** was implemented prior to **Enhancment Two - Aglorithms & Data Structures**. This is due to easier implementation of algorithms/data structures thanks to stored and consistent inputs/outputs thanks to the SQLite database. However, there is also some overlap in these two enhancements, as algorithms and data structures do play a significant role in setting up, populating, and accessing a database.
 
 <details>
-<summary><b>Click here to expand/collapse this section</b></summary>
+<summary>Click here to expand/collapse this section</summary>
 
 #### The Process
 To begin, the main goal of implementing a database was to have repeat access to data with improved ability to search, sort, and modify. To that end, the first task was implementing a SQLite database. However, instead of using the default Android implementation of SQLite and related libraries, I instead used SQLCipher, so that a more secure database can be encrypted and require a passkey to decrypt it. This allows, should the Corner Grocer desire, an added level of security. While the application itself stores the database in a private folder in the system accessible only to the application, it now includes an added layer of protection. Another step of security is preventing SQL injection. This is accomplished in numerous ways, including the use of parameterized queries for user input, content values for helper methods, and limiting lengths and types of user input. 
@@ -141,7 +154,7 @@ As seen in earlier screenshots, there were placeholders for adding, updating, an
 </p>
 <br>
 
-There is also another significant change. When first launched, or when the database is removed when clearing the application storage, the application will build the SQLite database based on the input text file. This file has been modified for the Android application to include the data in this format: <code>Name,Category,Quantity</code>. An example portion of the input file and resulting main screen are below.
+There is also another significant change. When first launched, or when the database is removed when clearing the application storage, the application will build the SQLite database based on the input text file. This file has been modified for the Android application to include the data in this format: `Name,Category,Quantity`. An example portion of the input file and resulting main screen are below.
 
 ```
 Apples,Produce,4
@@ -156,7 +169,7 @@ Cauliflower,Produce,6
 </p>
 <br>
 
-Additional features include case insensitivity and trimmed inputs, so attempting to add <code> yAMS     </code> while <code>`Yams`</code> has already been entered will let you know that it is already in the database. This can help prevent issues with repeat items, especially in cases where users may accidentally attempt adding an existing item with differing capitalization or add a space after entering a product name due to keyboard suggestions.
+Additional features include case insensitivity and trimmed inputs, so attempting to add ` yAMS     ` while `Yams` has already been entered will let you know that it is already in the database. This can help prevent issues with repeat items, especially in cases where users may accidentally attempt adding an existing item with differing capitalization or add a space after entering a product name due to keyboard suggestions.
 
 Other, minor fixes have been added in this enhancement as well, including improved enabling/disabling of buttons when certain conditions are met, such as the increment button being disabled to begin with when the item chosen for updating began with the maximum quantity. 
 
@@ -175,3 +188,49 @@ For this artifact, there was a somewhat large learning curve in a few areas. Fir
 
 </details>
 <br>
+
+### Enhancement Two - Algorithms & Data Structure
+Note: This enhancement follows **Enhancement Three - Databases**, as it largely focuses on manipulating the data from that enhancement.
+
+<details>
+<summary>Click here to expand/collapse this section</summary>
+For this enhancement, the application includes sorting based on different attributes, including by name, quantity, and product category in ascending and descending orders. Searching has also been implemented, allowing users to peruse data as effectively as possible, and while maintaining the current sorting method. These enhancements also function with the toggleable histogram. This is also the enhancement in which code is cleaned up, exessive variables, calls, or other aspects are removed or optimized, and other minor improvements are made.
+
+#### The Process
+Using the data stored in the SQLite database previously, work on this enhancement began with modifying the database handler class to become a Singleton, as it only needs one instance, which also allows for both the main activity and adapter to communicate with it simulteanously. This allows for calls from either to utilize the same attributes in the handler class, namely the sorting method of SQL's ORDER BY statement. Because of this, any updates on either end can utilize the sorting method so that the user experience is consistent and intuitive. <a href="screenshots/cropped/IndexUsage.png">An index was created for the name column in the table to allow faster ordering.</a><br>
+The next step was implementing searching, which involved modifying the adapter class in particular to take in a filtered list, which was acquired through the main activity's SearchView calling for an updated list whenever the text was modified. This required some moderate changes to the way the RecyclerView received new data, and how it updates. For efficiency, updates and deletions no longer reload the entire database's table's contents, but instead update the single item modified or deleted. 
+
+#### The Features
+The most noticeable features incorporated are the search and sort functions.
+
+- **Sorting**
+
+To allow for improved readability and utility, the easy to see and access "Sorting By" button updates on each click, allowing users to see the data in their preferred order. This includes by name, quantity, and category, each with ascending and descending options. Note that the initial database, created from an input file, did not contain any categories except for "Produce". 
+<p align="center">
+    <img src="screenshots/cropped/Sort1.png" height="150px" alt="The sort button demonstrating ordering by ascending names.">
+    <img src="screenshots/cropped/Sort2.png" height="150px" alt="The sort button demonstrating ordering by descending names.">
+    <img src="screenshots/cropped/Sort3.png" height="150px" alt="The sort button demonstrating ordering by ascending quantity.">
+    <img src="screenshots/cropped/Sort4.png" height="150px" alt="The sort button demonstrating ordering by descending quantity.">
+    <img src="screenshots/cropped/Sort5.png" height="150px" alt="The sort button demonstrating ordering by ascending categories.">
+    <img src="screenshots/cropped/Sort6.png" height="150px" alt="The sort button demonstrating ordering by descending categories.">
+</p>
+<br><br>
+
+- **Searching**
+
+This enhancement implements the SearchView to allow users to search for results quickly. You may notice that the sorting option is disabled during this process; this is so that the search maintains the current sorting order, and it is enabled again once the search is complete.
+<p align="center">
+    <img src="screenshots/cropped/SearchResults.png" height="400px" alt="The search function returning valid results.">
+</p>
+<br><br>
+
+#### The Narrative
+<details>
+<summary><b><i>Click here to expand and read the accompanying narrative for the algorithms and data structure enhancement</i></b></summary>
+
+>For this enhancement, I have continued my work on the Corner Grocer Android application based on the CS 210 - Programming Languages C++ project. In the project, a file was read from input that contained the items purchased at the Corner Grocer. The initial artifact allowed users to search for a specific item, display all items, and display all items as a histogram. As a simple project, it allowed me the flexibility to adapt it into a new language with new features while retaining its core goals. For algorithms and data structures, it allowed me to manipulate data more effectively, and to demonstrate methods of data handling that improve speed and utility, such as through sorting and searching methods, while also allowing easier modifications in the event of additional information being required or desired. Because I performed the database enhancement first, I was then able to utilize the information within the database to quickly construct and sort different lists, add new columns of information, and apply filters to aid users. This enabled me to demonstrate an understanding of best practices when evaluating and implementing solutions for data structuring and management.<br><br>
+With this enhancement, I completed my final outcome, which is the third in the list, relating to designing and evaluating computing solutions to solve problems using algorithmic principles and practices while managing trade-offs. One example of this is the use of indexing for the SQLite database to allow faster read operations. While the use of many indexes within a large write-heavy database may see significant slowdowns, at the size and operation assumed by the initial artifact prompt any potential slowdown would be unnoticeable, and the use of write operations will be much less than read operations. This allows faster reading and sorting than without an index, with no perceptible trade-off. With the index, the time complexity of a search may be O(log n), as opposed to the standard O(n). Such considerations allow the program to run in an efficient manner, meeting user needs and allowing greater flexibility in how data is read and interpretted. With this enhancement, my course outcomes are completed, though there are still more opportunities to demonstrate adherence to them, such as through the professional self-assessment.<br><br>
+Throughout this stage of enhancements, I learned the importance of carefully weighing my options with regard to solutions and practices. While the provided input file contains only twenty items, it is important to consider how the application would handle much larger amounts of data. Though the initial input may be small, with the newly implemented ability to add items solutions that have almost no perceptible slowdowns may cause severe issues with more data. Therefore, I had to do a lot of research into modern solutions and their trade-offs before implementing any. I also had to learn to better use tools for testing data, such as through Android Studio's app inspection window to manage and query data, evaluate query plans, and ensure that solutions such as the created index were being utilized in any appropriate scenarios. 
+
+</details>
+</details>
