@@ -1,7 +1,5 @@
 # Corner Grocery Application
 
-## Note:
-This is neither the final version of the project, nor of this README file. Updates will continue to be detailed as the project progresses. 
 
 ## The Original Project
 <details open>
@@ -56,7 +54,7 @@ Clicking on the thumbnail below will take you to the video hosted on Youtube:
 ### The Goal:
 To demonstrate competency in the course outcomes for CS 499 - Computer Science Capstone, I wanted to take the original artifact and demonstrate an ability to adapt it to other languages and systems, and to improve upon its functionality. To that end, the goal was to take the original artifact and recreate it as a fully-fledged Android application, using best practices and demonstrating an eye for user interface and user experience design, as well as an understanding of how to develop it to be update-friendly should new features be requested. As such, the final version should incorporate a large change of aesthetics including implementation of a graphical user interface, as well as implementations of new data structures, algorithms, engineering, and a SQLite database.
 
-### Enhancement One - Software Design and Engineering
+### <a href="EnhancementOne/">Enhancement One - Software Design and Engineering</a>
 <details>
 <summary>Click here to expand/collapse this section</summary>
 
@@ -138,7 +136,7 @@ The other challenge I faced is trying to avoid perfecting every detail too early
 </details>
 <br>
 
-### Enhancement Three - Databases
+### <a href="EnhancementThree/">Enhancement Three - Databases</a>
 Note, **Enhancement Three - Databases** was implemented prior to **Enhancment Two - Aglorithms & Data Structures**. This is due to easier implementation of algorithms/data structures thanks to stored and consistent inputs/outputs thanks to the SQLite database. However, there is also some overlap in these two enhancements, as algorithms and data structures do play a significant role in setting up, populating, and accessing a database.
 
 <details>
@@ -189,7 +187,7 @@ For this artifact, there was a somewhat large learning curve in a few areas. Fir
 </details>
 <br>
 
-### Enhancement Two - Algorithms & Data Structure
+### <a href="EnhancementTwo/">Enhancement Two - Algorithms & Data Structure</a>
 Note: This enhancement follows **Enhancement Three - Databases**, as it largely focuses on manipulating the data from that enhancement.
 
 <details>
