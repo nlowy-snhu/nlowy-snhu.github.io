@@ -1,7 +1,10 @@
-# Corner Grocery Application
+#### About My Work
+>Throughout my work, I have demonstrated a growing affinity for developing using appropriate, well-founded techniques in several areas of computer science. Whether this is through my work in developing <a href="https://github.com/nlowy-snhu/cs465-fullstack">full-stack applications through the MEAN (MongoDB, Express, Angular, Node) stack</a>, developing <a href="https://github.com/nlowy-snhu/CS340">web application dashboards using a combination of python, MongoDB</a>, and external libraries such as <a href="https://github.com/plotly/dash">Dash</a>, or creating mobile applications as can be seen below that utilize SQL and SQLite. These techniques offer efficiency while maintaining a security mindset. In the application below, this can be seen through the use of encryption/decryption libraries and measures to prevent SQL injection, while also analyzing techniques such as the use of indexes that offer increased efficiency while weighing the potential tradeoffs. I have also gained the ability to acquire feedback from various parties -- whether through the project below or in others, such as when developing as part of a Scrum Agile team -- and to incorporate it into my work to create the best possible deliverable. I also have gained familiarity with collaborative tools, such as repositories, mockup software, software development lifecycle tracking management software, and more.
+>
+>For the project demonstrated, I was tasked with showcasing my ability to enhance past work in three areas: software design and engineering, algorithms and data structure, and databases. To that end, I decided that, with instructor approval, instead of enhancing three separate artifacts to simply focus more heavily on a category for each, I would enhance one old artifact, compounding my knowledge and skills to demonstrate an affinity for building a complete application that incorporates and enhances the three categories. Rather than demonstrating that I can quickly apply loose principles, I wished to showcase the way I write code overall, with all categories being given careful consideration and application. Therefore, my original project, a basic C++ project that reads sales from a file and displays them in a terminal window, has been adapted into a fully developed Android application. The new Android application retains all of the same functionality as the original C++ artifact, but with added focus on the key areas listed above. It also demonstrates an eye for user interface/user experience design and implements appropriate new features, increased security, and coding practices that allow for easier future updates, such as more flexible data structures and a maintained Javadoc commenting style. A few example aspects of the enhancements include a SQLite database with added features for creating, updating, and deleting items, sorting and searching options, appropriate themes for light and dark modes, SQL injection preventative measures, adherence to Android design and accessibility guidelines, and more. Through this project, I have incorporated many of the skills that I have learned throughout my experiences in Computer Science.  
 
-## Note:
-This is neither the final version of the project, nor of this README file. Updates will continue to be detailed as the project progresses. 
+<br><br>
+# Corner Grocery Application
 
 ## The Original Project
 <details open>
@@ -56,7 +59,7 @@ Clicking on the thumbnail below will take you to the video hosted on Youtube:
 ### The Goal:
 To demonstrate competency in the course outcomes for CS 499 - Computer Science Capstone, I wanted to take the original artifact and demonstrate an ability to adapt it to other languages and systems, and to improve upon its functionality. To that end, the goal was to take the original artifact and recreate it as a fully-fledged Android application, using best practices and demonstrating an eye for user interface and user experience design, as well as an understanding of how to develop it to be update-friendly should new features be requested. As such, the final version should incorporate a large change of aesthetics including implementation of a graphical user interface, as well as implementations of new data structures, algorithms, engineering, and a SQLite database.
 
-### Enhancement One - Software Design and Engineering
+### <a href="EnhancementOne/">Enhancement One - Software Design and Engineering</a>
 <details>
 <summary>Click here to expand/collapse this section</summary>
 
@@ -138,7 +141,7 @@ The other challenge I faced is trying to avoid perfecting every detail too early
 </details>
 <br>
 
-### Enhancement Three - Databases
+### <a href="EnhancementThree/">Enhancement Three - Databases</a>
 Note, **Enhancement Three - Databases** was implemented prior to **Enhancment Two - Aglorithms & Data Structures**. This is due to easier implementation of algorithms/data structures thanks to stored and consistent inputs/outputs thanks to the SQLite database. However, there is also some overlap in these two enhancements, as algorithms and data structures do play a significant role in setting up, populating, and accessing a database.
 
 <details>
@@ -189,7 +192,7 @@ For this artifact, there was a somewhat large learning curve in a few areas. Fir
 </details>
 <br>
 
-### Enhancement Two - Algorithms & Data Structure
+### <a href="EnhancementTwo/">Enhancement Two - Algorithms & Data Structure</a>
 Note: This enhancement follows **Enhancement Three - Databases**, as it largely focuses on manipulating the data from that enhancement.
 
 <details>
